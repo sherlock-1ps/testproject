@@ -1,0 +1,15 @@
+.ant-tabs {
+  &.ant-tabs-card {
+    .ant-tabs-nav-list {
+      .ant-tabs-tab {
+        &.ant-tabs-tab-active {
+          @apply bg-primary border-b-primary border-primary;
+
+          >.ant-tabs-tab-btn {
+            @apply text-white;
+          }
+        }
+      }
+    }
+  }
+}

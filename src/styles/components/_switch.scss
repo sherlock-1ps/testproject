@@ -1,0 +1,85 @@
+.ant-mock-switch {
+  @apply text-text-body;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 22px;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  min-width: 44px;
+  height: 22px;
+  vertical-align: middle;
+  background: rgba(160, 163, 181, 0.25);
+  border: 0;
+  border-radius: 100px;
+  transition: all 0.2s;
+  user-select: none;
+
+  .ant-switch-handle {
+    position: absolute;
+    top: 2px;
+    inset-inline-start: 2px;
+    width: 18px;
+    height: 18px;
+    transition: all 0.2s ease-in-out;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      inset-inline-end: 0;
+      bottom: 0;
+      inset-inline-start: 0;
+      background-color: #fff;
+      border-radius: 9px;
+      box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+      transition: all 0.2s ease-in-out;
+      content: '';
+      box-sizing: border-box;
+    }
+  }
+
+  .ant-switch-inner {
+    display: block;
+    overflow: hidden;
+    border-radius: 100px;
+    height: 100%;
+    padding-inline-start: 24px;
+    padding-inline-end: 9px;
+    transition:
+      padding-inline-start 0.2s ease-in-out,
+      padding-inline-end 0.2s ease-in-out;
+  }
+
+  &.ant-switch-checked {
+    @apply bg-primary;
+
+    .ant-switch-handle {
+      inset-inline-start: calc(100% - 20px);
+    }
+
+    &.ant-switch-small {
+      .ant-switch-handle {
+        inset-inline-start: calc(100% - 17px);
+      }
+    }
+
+    .ant-switch-inner {
+      padding-inline-start: 9px;
+      padding-inline-end: 24px;
+    }
+  }
+
+  &.ant-switch-small {
+    min-width: 34px;
+    height: 19px;
+    line-height: 19px;
+
+    .ant-switch-handle {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

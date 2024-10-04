@@ -1,0 +1,52 @@
+.ant-modal-confirm-content {
+  @apply text-text-body #{!important};
+}
+
+.ant-modal {
+  .ant-modal-close {
+    @apply right-2 top-2 #{!important};
+  }
+
+  .ant-modal-content {
+    @apply overflow-hidden;
+
+    border: 1px solid theme('colors.popup-border') !important;
+    padding: 0 !important;
+
+    .ant-modal-header {
+      @apply mb-0 p-4;
+
+      border-bottom: 1px solid theme('colors.border');
+    }
+
+    .ant-modal-body {
+      @apply p-4;
+
+      .ant-modal-confirm-body-wrapper {
+        // @apply -m-4;
+
+        .ant-modal-confirm-body {
+          @apply p-4;
+
+          .ant-modal-confirm-title {
+            @apply text-white;
+          }
+        }
+
+        .ant-modal-confirm-btns {
+          @apply mt-0 border-t p-4;
+
+          .ant-btn-default {
+            color: white !important;
+          }
+        }
+      }
+    }
+
+    .ant-modal-footer {
+      @apply mt-0 p-4;
+
+      border-top: 1px solid theme('colors.border');
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.ant-card {
+  @apply shadow;
+
+  .ant-card-head {
+    // padding: 0 theme('spacing.4') !important;
+  }
+
+  .ant-card-body {
+    // padding: theme('spacing.4') !important;
+  }
+
+  &.ant-card-bordered {
+    .ant-card-head {
+      @apply px-4;
+    }
+
+    .ant-card-body {
+      @apply p-4;
+    }
+  }
+
+  &:not(.ant-card-bordered) {
+    @apply border;
+
+    .ant-card-head {
+      @apply px-4 pt-4 border-b-0;
+
+      min-height: auto;
+    }
+
+    // &.ant-card-small {
+    //   .ant-card-head {
+    //     @apply pt-3;
+    //   }
+
+    //   .ant-card-body {
+    //     @apply pt-1;
+    //   }
+    // }
+
+    .ant-card-body {
+      @apply pt-3 px-4 pb-4;
+    }
+  }
+}

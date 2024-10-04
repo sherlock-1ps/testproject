@@ -1,0 +1,47 @@
+.ant-select-multiple .ant-select-selection-item-remove {
+  @apply text-error #{!important};
+}
+
+.ant-tree-select-dropdown {
+  .ant-select-tree {
+    .ant-select-tree-list {
+      .ant-select-tree-list-holder {
+        .ant-select-tree-list-holder-inner {
+          .ant-select-tree-treenode {
+            .ant-select-tree-checkbox {
+              @apply m-0 me-0 ms-0 flex items-center justify-center size-8;
+
+              .ant-select-tree-checkbox-inner {
+                &::after {
+                  transform: rotate(45deg) scale(0) translate(-45%, -45%);
+                }
+              }
+
+              &.ant-select-tree-checkbox-indeterminate {
+                .ant-select-tree-checkbox-inner {
+                  &::after {
+                    transform: translate(-45%, -45%) scale(1);
+                  }
+                }
+              }
+
+              &.ant-select-tree-checkbox-checked {
+                .ant-select-tree-checkbox-inner {
+                  &::after {
+                    transform: rotate(45deg) scale(1) translate(-45%, -45%);
+                    inset-inline-start: 36%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.ant-select-dropdown {
+  @apply border;
+}

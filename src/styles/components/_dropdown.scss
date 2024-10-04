@@ -1,0 +1,16 @@
+.ant-dropdown {
+  .ant-dropdown-menu {
+    @apply border;
+  }
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-icon,
+.ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-icon {
+  min-width: 18px !important;
+  // margin-inline-end: 8px;
+  font-size: 16px !important;
+}
+
+.ant-picker-dropdown .ant-picker-panel-container {
+  @apply shadow-dept1 #{!important};
+}
