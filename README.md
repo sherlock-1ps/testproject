@@ -1,118 +1,34 @@
-# Backoffice Web
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-> Backoffice Web (Next.js + App Router + Antd + Tailwind)
+## Getting Started
 
-## Build Setup
-#### Install
-
-To install all apps and packages, run the following command:
+First, run the development server:
 
 ```bash
-yarn install | yarn
-```
-
-#### Develop
-
-To develop all apps and packages, run the following command:
-
-```bash
-yarn lingui # you can only do it once, or you need to translate.
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
 ```
 
-#### Build
-To build all apps and packages, run the following command:
-```bash
-yarn build
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-#### Start
-> Start a Next.js production server.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-yarn start
-```
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Project Structure
+## Learn More
 
-Root
-```
-├── src/
-│   ├── app               #
-│   ├── components        # 
-│   ├── constants         #
-│   ├── enums             #
-│   ├── layouts           #
-│   ├── libs              #
-│   ├── locales           #
-│   ├── services          #
-│   ├── stores            #
-│   ├── styles            #
-│   ├── theme             #
-│   ├── types             #
-│   ├── utils             #
-│   └── ...
-└── ...
-```
+To learn more about Next.js, take a look at the following resources:
 
-## Files Structure
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-การตั้งชื่อไฟล์ในโปรเจคนี้เราจะใช้เป็น Kebab Case ตัวอย่างเช่น `/components/seo-header.tsx`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## การใช้งาน i18n
+## Deploy on Vercel
 
-หลักๆ เราจะใช้งานคือ เรียก `const { _ } = useLingui()` ใน react component แล้วทำการใช้งานเช่น ```_(msg`ทดสอบ`)``` เป็นต้น ส่วนตัว `msg` ได้จากการ `import { msg } from '@lingui/macro'`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-หากต้องการทำการครอบ element ด้วยก็ทำการ import `Trans` จาก `@lingui/macro` มาใช้แทน ตามตัวอย่างข้างล่าง
-
-```tsx
-<Trans>ทดสอบ <span>Something...</span></Trans>
-// OR
-<Trans><h1><span>ทดสอบ</span><span>Something...</span></h1></Trans>
-```
-
-## Antd Components
-
-### Space 
-- โปรเจคนี้เราจะไม่ใช้ Space เพราะมันดันไปเพิ่ม element ที่เป็น item ให้อีกที มองว่าไม่เหมาะ แนะนำว่าควรใช้ tailwind ปั้น FlexBox Layout ขึ้นมาเอง
-
-### Button
-- เราจะไม่ import จาก `antd` โดยตรง แต่จะ import ผ่าน base component ในโปคเจคแทน `import Button from '@/components/base/ui/button'`
-- สาเหตุ เพราะว่าเราต้องการให้ตัว Button รองรับหลายสี เราจึงทำการสร้าง props ชื่อ `variant` มา และสามารถเลือกใช้สีตามที่กำหนดได้
-
-### Modal
-- เราจะไม่ import จาก `antd` โดยตรง แต่จะ import ผ่าน base component ในโปคเจคแทน `import Modal from '@/components/base/ui/modal'`
-- สาเหตุ เพราะว่าเราต้องการ Custom ตัว Button เป็นไปตาม design system ของ project นี้
-
-### Tag
-- เราจะไม่ import จาก `antd` โดยตรง แต่จะ import ผ่าน base component ในโปคเจคแทน `import Tag from '@/components/base/ui/tag'`
-- สามารถใช้ได้ทั้ง variant ที่ custom ขึ้นมา และ color ยังสามารถใช้ได้เหมือนเดิม
-
-## SSR
-- สำหรับ App router นั้นหากทำการ fetch data ผ่าน SSR เพื่อนำมาใช้ในหน้าจัดการ แล้วอัพเดทผ่าน CSR อาจจะไม่เหมาะ เพราะจะติดปัญหาตัว router cache ได้
-- ณ​ ตอนนี้คิดว่าใช้ CSR ไปก่อน ส่วนในอนาคต หากอยากทำ SSR จริงๆ ต้องใช้ action ในการ handle ปัญหาเหล่านี้แทน
-- App router มันพยายามทำ full cache ทำให้ต้องเขียนตาม Pattern ใหม่ของมันให้ได้ `แต่ ณ​ ตอนนี้ ขอให้พอใช้งานได้ไปก่อน แล้วค่อย refactoring ปรับไปใช้ตาม practice อีกที่`
-
-## Commit code type
-Easy to commit code via [VSCode Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
-
-Keep this version for *VSCode Conventional Commits*
-```json
-"devDependencies": {
-  "@commitlint/cli": "^18.6.1",
-  "@commitlint/config-conventional": "^18.6.2"
-}
-```
-
-Must be one of the following:
-* **feat**: A new feature
-* **fix**: A bug fix
-* **docs**: Documentation only changes
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **perf**: A code change that improves performance
-* **test**: Adding missing tests or correcting existing tests
-* **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-* **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-* **chore**: Other changes that don't modify src or test files
-* **revert**: Reverts a previous commit
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
