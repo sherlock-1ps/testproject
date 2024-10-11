@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "bops": "MockupMenu",
     "dashboards": "لوحات القيادة",
     "crm": "إدارة علاقات العملاء",
     "analytics": "تحليلات",

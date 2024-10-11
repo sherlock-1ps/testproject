@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "bops": "MockupMenu",
     "dashboards": "Dashboards",
     "crm": "CRM",
     "analytics": "Analytics",

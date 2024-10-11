@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "bops": "MockupMenu",
     "dashboards": "Tableaux de bord",
     "crm": "GRC",
     "analytics": "Analytique",
