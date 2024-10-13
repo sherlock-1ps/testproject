@@ -81,6 +81,9 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
         renderExpandedMenuItemIcon={{ icon: <i className='tabler-circle text-xs' /> }}
         menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
       >
+        <SubMenu label={dictionary['navigation'].bops} icon={<i className='tabler-smart-home' />}>
+          <MenuItem href={`/${locale}/bops/role`}>{dictionary['navigation'].rolesPermissions}</MenuItem>
+        </SubMenu>
         <SubMenu
           label={dictionary['navigation'].dashboards}
           icon={<i className='tabler-smart-home' />}
