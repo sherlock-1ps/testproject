@@ -1,9 +1,12 @@
-import { Card, CardContent, Grid, Typography } from '@mui/material'
+import { Card, CardContent, Grid, Typography, Avatar, AvatarGroup, Tooltip, Button } from '@mui/material'
 
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@/@core/components/option-menu'
+import { TeamsTabType } from '@/types/pages/profileTypes'
 
-const CardRoleList = () => {
+const CardRoleList = ({ data }: { data?: TeamsTabType[] }) => {
+  const mockUpUser = data && data.length > 0 ? data[0] : null
+
   return (
     <Card>
       <CardContent className='flex flex-col gap-4'>
@@ -41,6 +44,28 @@ const CardRoleList = () => {
             </Typography>
           </Grid>
         </Grid>
+
+        {mockUpUser && (
+          <div className='flex items-center justify-between flex-wrap gap-4'>
+            <AvatarGroup
+              total={mockUpUser.extraMembers ? mockUpUser.extraMembers + 3 : 3}
+              max={6}
+              sx={{ '& .MuiAvatar-root': { width: '2rem', height: '2rem', fontSize: '1rem' } }}
+              className='items-center pull-up'
+            >
+              {mockUpUser.avatarGroup.map((person, index) => {
+                return (
+                  <Tooltip key={index} title={person.name}>
+                    <Avatar src={person.avatar} alt={person.name} />
+                  </Tooltip>
+                )
+              })}
+            </AvatarGroup>
+          </div>
+        )}
+        <Button variant='outlined' color='secondary'>
+          Set Permissions
+        </Button>
       </CardContent>
     </Card>
   )
